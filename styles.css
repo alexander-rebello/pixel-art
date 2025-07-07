@@ -1,0 +1,245 @@
+.slider-controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 12px;
+	height: 100%;
+}
+
+#opacitySlider {
+	width: 80px;
+	margin-bottom: 2px;
+}
+
+#opacityValue {
+	font-size: 12px;
+	color: #333;
+	margin-top: 0;
+}
+
+.color-divider {
+	width: 2px;
+	height: 32px;
+	background: #bbb;
+	margin: 0 12px;
+	border-radius: 2px;
+	align-self: center;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #e0e0e0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+/* Top Navigation */
+.top-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 20px;
+	background-color: #333;
+	color: white;
+	flex-shrink: 0;
+}
+
+.grid-controls {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.file-controls {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 20px;
+	background-color: #333;
+	color: white;
+	flex-shrink: 0;
+}
+
+.slider-controls input {
+	width: 80px;
+	margin: 0 6px;
+}
+
+#brushSizeValue {
+	font-size: 12px;
+	color: #333;
+	min-width: 18px;
+	text-align: center;
+}
+
+.color-controls {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+/* Common label styles */
+label {
+	font-weight: bold;
+}
+
+/* Input styles */
+input {
+	width: 60px;
+	padding: 5px;
+	border: none;
+	border-radius: 3px;
+}
+
+/* Button styles */
+.grid-controls button,
+.file-controls button,
+.file-controls .import-btn {
+	padding: 8px 15px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.file-controls #clearBtn {
+	background-color: #f44336;
+}
+
+.file-controls #exportPngBtn {
+	background-color: #2196f3;
+}
+
+.grid-controls button:hover,
+.file-controls button:hover,
+.file-controls .import-btn:hover {
+	opacity: 0.9;
+	transform: translateY(-1px);
+}
+
+.file-controls #clearBtn:hover {
+	background-color: #da190b;
+}
+
+.file-controls #exportPngBtn:hover {
+	background-color: #0b7dda;
+}
+
+/* Color picker */
+#colorPicker {
+	width: 30px;
+	height: 30px;
+	border: 2px solid white;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: transform 0.1s;
+}
+
+#colorPicker:hover {
+	transform: scale(1.1);
+}
+
+/* Color presets */
+.color-presets {
+	display: flex;
+	gap: 8px;
+}
+
+.preset-color {
+	width: 30px;
+	height: 30px;
+	border: 2px solid white;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: transform 0.1s;
+}
+
+.preset-color:hover {
+	transform: scale(1.1);
+}
+
+.preset-color.active {
+	border-color: #ffff00;
+	border-width: 3px;
+}
+
+/* Canvas container */
+
+.canvas-container {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	overflow: auto;
+	min-height: 0;
+	background: #e0e0e0;
+}
+
+.pixel-canvas {
+	display: grid;
+	gap: 1px;
+	background-color: #ccc;
+	border: 2px solid #333;
+	width: fit-content;
+	height: fit-content;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.pixel-bg {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* 2x2 checkered pattern: four squares per pixel */
+	background: repeating-conic-gradient(#bbb 0% 25%, #fff 0% 50%) 0 0/100% 100%;
+}
+
+.pixel {
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	transition: opacity 0.1s;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+	.top-nav {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.bottom-nav {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.color-presets {
+		flex-wrap: wrap;
+	}
+}
